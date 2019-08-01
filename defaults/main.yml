@@ -1,6 +1,6 @@
 ---
 
-strongswan_config_file:  "{{strongswan_prefix}}/ipsec.conf"
+strongswan_config_file: "{{strongswan_prefix}}/ipsec.conf"
 
 strongswan_secrets_file: "{{strongswan_prefix}}/ipsec.secrets"
 
@@ -24,7 +24,7 @@ strongswan_conn_default: {}
 # strongswan_conns: Dict to specify connections
 #  Each key represents the name of a connection. The subelemets that the
 #  connection has is any valid directive for a connection
-#  
+#
 #   strongswan_conns:
 #     conn1:
 #       right: 2.3.4.5

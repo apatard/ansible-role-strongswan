@@ -1,11 +1,10 @@
 ---
 
-- include: "install/{{ansible_os_family}}.yml"
+- include: "install/{{ ansible_os_family }}.yml"
 
 - name: Strongswan packages
   package:
-    name: "{{item}}"
+    name: "{{ strongswan_packages }}"
     state: present
-  with_items: "{{strongswan_packages}}"
 
 # vi:ts=2:sw=2:et:ft=yaml

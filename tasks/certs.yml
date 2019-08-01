@@ -1,4 +1,4 @@
-
+---
 - name: copy certificates
   copy:
     src: "{{ item.file }}"
