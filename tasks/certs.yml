@@ -8,6 +8,7 @@
     mode: "0644"
   with_items: "{{ strongswan_certificates }}"
   notify: ipsec reload
+  when: strongswan_certificates | length > 0
 
 - name: copy private keys
   copy:
@@ -18,3 +19,4 @@
     mode: "0644"
   with_items: "{{ strongswan_keys }}"
   notify: ipsec reload
+  when: strongswan_keys | length > 0
