@@ -93,7 +93,7 @@ The double quotes inside the simple ones is meant to escape any special chars.
 through `strongswan_private_keys`:
 
 ```
-strongswan_private_keys:
+strongswan_keys:
   - filename: key.pem
     file: key.pem # can be a file in ./files, encrypted in vault
 ```
