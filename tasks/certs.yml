@@ -19,4 +19,5 @@
     mode: "0644"
   with_items: "{{ strongswan_keys }}"
   notify: ipsec reload
+  diff: no
   when: strongswan_keys | length > 0
