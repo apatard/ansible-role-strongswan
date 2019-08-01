@@ -1,0 +1,39 @@
+---
+strongswan_config_setup:
+  uniqueids: "yes"
+  charondebug: 'ike 2, knl 3, cfg 0'
+strongswan_conn_default:
+  left: "{{ ansible_default_ipv4.address }}"
+  leftsourceip: "{{ ansible_default_ipv4.address }}"
+  leftsubnet: 10.0.0.0/16
+  type: tunnel
+  keyexchange: ikev2
+strongswan_conns:
+  conn1:
+    authby: rsasig
+    leftrsasigkey: '%cert'
+    leftca: '"C = CH, O = strongSwan, CN = strongSwan CA"'
+    leftid: '"C = CH, O = strongSwan, CN = peer"'
+    rightrsasigkey: '%cert'
+    rightca: '"C = CH, O = strongSwan, CN = strongSwan CA"'
+    right: 1.2.3.4
+    rightsubnet: 2.3.4.0/24
+    rightid: '"C = CH, O = strongSwan, CN = server"'
+    ike: aes256-sha1-modp1024
+    esp: aes256-sha1-modp1024
+    auto: route
+strongswan_secrets:
+  - left: '"C = CH, O = strongSwan, CN = peer"'
+    right: '"C = CH, O = strongSwan, CN = server"'
+    type: RSA
+    credentials: 'peerKey.der'
+strongswan_keys:
+  - filename: peerKey.der
+    file: peerKey.der
+strongswan_certificates:
+  - filename: peerCert.der
+    file: peerCert.der
+    type: certs
+  - filename: caCert.der
+    file: caCert.der
+    type: cacerts
