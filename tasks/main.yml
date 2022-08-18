@@ -4,16 +4,16 @@
   include_vars: "{{ ansible_os_family }}.yml"
   tags: always
 
-- include: install.yml
+- include_tasks: install.yml
   tags: strongswan_install
 
-- include: certs.yml
+- include_tasks: certs.yml
   tags: strongswan_certs
 
-- include: config.yml
+- include_tasks: config.yml
   tags: strongswan_config
 
-- include: service.yml
+- include_tasks: service.yml
   tags: strongswan_service
 
 # vi:ts=2:sw=2:et:ft=yaml
