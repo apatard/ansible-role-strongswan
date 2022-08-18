@@ -1,4 +1,5 @@
 ---
+strongswan_svc: strongswan
 
 strongswan_config_file: "{{strongswan_prefix}}/ipsec.conf"
 

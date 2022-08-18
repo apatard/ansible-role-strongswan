@@ -36,11 +36,18 @@ strongswan_conns: {}
 
 Secrets are specified using `strongswan_secrets`. It is a list where each
 element might contain the following attributes:
+
 ```
   left:       Optional - Any valid ID selector
   right:      Optional - Any valid ID selector
   type:       Optional (defaults to PSK) - any valid secret type
   credential: Required - Connection's credentials
+```
+
+The strongswan service name is defined with `strongswan_svc`:
+
+```
+strongswan_svc: strongswan
 ```
 
 ## Usage
